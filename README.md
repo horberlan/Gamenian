@@ -64,6 +64,16 @@ A one round can be one of the followings:
 - A round with more than one play is critical, to win, we only compare `Cd_Face` and `Cd_Num` respectively, with the lowest `Cd_Face` winning the highest `Cd_Face` (going to the winner's hand) and the highest `Cd_Num` winning the lowest `Cd_Num` (going to the winner score). In this case, It is never a win round, but a win of `Cd_Num` scores to one player, and a win of `Cd_Face` to the other. It is not a tie if and only if one player has a mix of `Cd_Num` and `Cd_Face` cards.
 - If it is a tie play -with `[P_i::Cd_Num*, P_j::Cd_Face*]` and there are no more cards in hands for at least one player, it is still a tie round (`Round_n`). It is a final tie round and score is maintained (`Round_n-1`).
 
+### Round rules
+
+Because gameplay is a successive set of rounds, there is a crucial question to address; Who plays each round first ?
+
+- If we think opponents face up cards at the same time, there is a lot more chance in this game than strategy.
+- If we think one opponent face up a card after the other, there would be multiple approaches; For example the last round loser would start first or last (punish more or give him a little advantage to come back stronger)
+- Now I think the best option is to give each round some chance and also space for strategy. Here is how it goes in "Outscore":
+    - Player A comes first with whatever card and player B must declare he is either coming after with a `Cd_Face` or a `Cd_Num` card. Player A builds strategy on what Player B type of card is coming, and Player B builds strategy limited on one type of cards on Player A first play.
+    - Now when does Player A / B come first ? I do not know, I think of the following: In the beginning of gameplay, Player A / B comes first based on a coin flip or friendly declaration, then round after round, probably the loser of `Round_i` would go first ? 
+
 ## Strategy
 
  - For each play, in each round, (at any moment of gameplay) a player feels he will be winning and tries to maximize score, or feels he will be losing and tries to lower the score for the current round or for the whole game partie.
