@@ -1,0 +1,67 @@
+<html>
+
+<head>
+
+	<style>
+		.grid {
+			/* 13 ranks 4 suits */
+			display: grid;
+			grid-template-columns: repeat(13, 1fr);
+			grid-template-rows: 4fr;
+			grid-gap: 0.5vw;
+			margin: 5px;
+		}
+
+		.h1 {
+			text-align: center;
+		}
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+		integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<p class="h1">Winning plays</p>
+		<p class="h2">A pip card vs pip card</p>
+		<div id=Configuration class="grid">
+			<card-t suit=Hearts rank=10></card-t>
+			<card-t suit=3 rank=9></card-t>
+		</div>
+
+		<p class="h2">A face card vs face card</p>
+		<div id=Configuration class="grid">
+			<card-t cid=As></card-t>
+			<card-t suit=Hearts rank=Queen></card-t>
+		</div>
+
+		<p class="h2">One round of two plays</p>
+		<div id=Configuration class="grid">
+			<card-t cid=As></card-t>
+			<card-t suit=3 rank=9 bordercolor="green"borderradius="12"borderline="38"></card-t>
+		</div>
+		<div id=Configuration class="grid">
+			<card-t suit=Hearts rank=10></card-t>
+			<card-t suit=Hearts rank=Queen bordercolor="green"borderradius="12"borderline="38"></card-t>
+		</div>
+
+		<p class="h2">A tie round</p>
+		<p>A draw (a tie or inconclusive) round can lead to a tie partie. </p>
+		<div id=Configuration class="grid">
+			<card-t cid=As></card-t>
+			<card-t suit=Hearts rank=Queen></card-t>
+			<card-t suit=Hearts rank=Jack></card-t>
+		</div>
+		<div id=Configuration class="grid">
+			<card-t suit=Hearts rank=10></card-t>
+			<card-t suit=2 rank=5></card-t>
+			<card-t suit=3 rank=7></card-t>
+		</div>
+	</div>
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+	integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+	crossorigin="anonymous"></script>
+<script src="elements.cardmeister.min.js"></script>
+
+</html>
