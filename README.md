@@ -60,9 +60,12 @@ A one round can be one of the followings:
 
 - `[Pi::Cd_Num, Pj..Cd_Num]` is a one play round with the lowest Num is added to the opponent score *while cards go to the table.*
 - `[Pi::Cd_Face, Pj..Cd_Face]` is a one play round with the lowest Face card goes to the opponent hand *and not to the table.*
-- `[Pi::Cd_Num, Pj..Cd_Face]` or `[Pi::Cd_Face, Pj..Cd_Num]` are not sufficient for a round unless it is the last possible play. Another play is needed (this is a tie play and the round is not dealt).
-- A round with more than one play is critical, to win, we only compare `Cd_Face` and `Cd_Num` respectively, with the lowest `Cd_Face` winning the highest `Cd_Face` (going to the winner's hand) and the highest `Cd_Num` winning the lowest `Cd_Num` (going to the winner score). In this case, It is never a win round, but a win of `Cd_Num` scores to one player, and a win of `Cd_Face` to the other. It is not a tie if and only if one player has a mix of `Cd_Num` and `Cd_Face` cards.
-- If it is a tie play -with `[P_i::Cd_Num*, P_j::Cd_Face*]` and there are no more cards in hands for at least one player, it is still a tie round (`Round_n`). It is a final tie round and score is maintained (`Round_n-1`).
+- `[Pi::Cd_Num, Pj..Cd_Face]` or `[Pi::Cd_Face, Pj..Cd_Num]` are not sufficient for a round unless it is the last possible play, it is then the last round. Otherwise another play is needed : this is a tie play and the round is not dealt.
+- A round with more than one play is critical. To win, we only compare `Cd_Face` and `Cd_Num` for each player respectively face to face and number to number; With the "lowest" this time `Cd_Face` winning the highest single  `Cd_Face` card "going to the winner's hand" and the highest `Cd_Num` single card winning the lowest `Cd_Num` "going to the winner score". In this case, It is never a win round, but a win of `Cd_Num` scores to one player and a win of `Cd_Face` to the other.
+- As soon as there is `[P_i::Cd_Num*, (P_j::Cd_Face*, P_i::Cd_Num)]` or `[P_i::Cd_Face*, (P_j::Cd_Num*, P_i::Cd_Face)]` it is no longer a tie.
+- If it is a tie play (`[P_i::Cd_Num*, P_j::Cd_Face*]`) and there are no more cards in hands for at least one player, it is still a tie round (`Round_n`). It is a final tie round and score is maintained (`Round_n-1`).
+- Rounds can yield to many face cards in one players hand.
+- Long rounds can be seeked by one player strategy to keep current score until a tie final round.
 
 ### Round rules
 
@@ -77,7 +80,7 @@ Because gameplay is a successive set of rounds, there is a crucial question to a
 ## Strategy
 
  - For each play, in each round, (at any moment of gameplay) a player feels he will be winning and tries to maximize score, or feels he will be losing and tries to lower the score for the current round or for the whole game partie.
- - One strategy for player A is to feel the growing greed of player B; When player B is becoming greedy he may want to come up with big scoring cards (`Cd_Face` mostly); Player A would absorb the push by coming up with low cards (low `Cd_Num` mostly).
+ - One strategy for player A is to feel the growing greed of player B; When player B is becoming greedy he may want to come up with big scoring cards; Player A would absorb the push by coming up with low cards.
  - When player A feels winning the game and wants to maintain the current score, he may want to continue plays yielding a tie round; With the risk of losing a lot !
 
 -to be continued
