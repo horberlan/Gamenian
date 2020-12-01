@@ -87,6 +87,11 @@ A one round can be one of the followings:
 - Long rounds can be seeked by one player strategy to keep current score until a tie final round.
 - Because face cards are never scored until the final round, in the progress, they are used strategically for clever moves (to maintain or to end a tie round) but also for their final score.
 
+
+#### Round state machine
+
+![round_state_machine](round_state_machine.png)
+
 ### Round rules
 
 Because game-play is a successive set of rounds, there is a crucial question to address; Who plays each round first ?
