@@ -1,6 +1,8 @@
-# *Outscore* Card Game
+# *Gamenian* Card Game
 
-*Outscore* Card Game is a novel card game out of my imagination. I believe most viable and loved card games have these properties:
+*Gamenian* Card Game is a novel card game out of my imagination. I believe most viable and loved card games have these properties:
+
+*Gamenian* is an old English word meaning: to entertain or enjoy oneself; to display happiness or joy.
 
 - Easy to learn rules and an intuitive goal
 - Open possibilies for endless fun and also skills improvement 
@@ -9,7 +11,7 @@
     - Players cannot predict definitely a win at anytime in a party.
 - The game uses common and cheap tools (like the standard 52-card deck, domino tiles, stones and sticks, etc.).
 
-## Properties and goals of *Outscore*
+## Properties and goals of *Gamenian*
 
 ### A Trick-taking games
 
@@ -17,7 +19,7 @@ The object of a trick-taking game is based on the play of multiple rounds, or tr
 
 ## Goal
 
-- The goal in *Outscore* is to simply have the biggest accumulated score (sum) at the end of a party. It is a mix of luck, feeling and reflexion; In other words: Two exposed hands at game start cannot conclude the winner but can say one seems to be luckier.
+- The goal in *Gamenian* is to simply have the biggest accumulated score (sum) at the end of a party. It is a mix of luck, feeling and reflexion; In other words: Two exposed hands at game start cannot conclude the winner but can say one seems to be luckier.
 
 - To understand the "win propertie" before diving into rules, let's imagine the game is 100% chance; Assuming this, having two hands and before diving into game-play, We can conclude scores like the following:
 
@@ -56,9 +58,9 @@ We will explain a "round" in a two opponents version in the following section **
 
 ### Rules and game-play
 
-***This is the two opponents version of Outscore***
+***This is the two opponents version of Gamenian***
 
-*Outscore* is played progressively while marking down accumulated scores in one visible paper where each player has his current score. 
+*Gamenian* is played progressively while marking down accumulated scores in one visible paper where each player has his current score. 
 
 Example:
 
@@ -99,7 +101,7 @@ Because game-play is a successive set of rounds, there is a crucial question to 
 
 - If we think opponents faces up cards at the same time, there is a lot more chance in this game than strategy.
 - If we think one opponent faces up a card after the other, there would be multiple approaches; For example the last round loser would start first or last (punish more or give him a little advantage to come back stronger).
-- I think the best option is to give each round some chance and also space for strategy. Here is how It goes in *Outscore*:
+- I think the best option is to give each round some chance and also space for strategy. Here is how It goes in *Gamenian*:
     - Player A comes first with whatever card and player B must declare He is either coming after with a `Cd_Face` or a `Cd_Num` card. Player A builds strategy on what Player B type of card is coming, and Player B builds strategy limited on one type of cards on Player A first move.
     - Now when does Player A / B come first ? I do not know, I think of the following: In the beginning of game-play, Player A / B comes first based on a coin flip or friendly declaration, then round after round, probably the loser of `Round_i` would go first ? 
 
