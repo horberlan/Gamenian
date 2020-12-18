@@ -1,3 +1,14 @@
+function blink(){
+    var f = document.getElementById('score');
+    setTimeout(function() {
+        f.style.display = (f.style.display == 'none' ? '' : 'none');
+    }, 500);
+    setTimeout(function() {
+        f.style.display = (f.style.display == 'none' ? '' : 'none');
+    }, 1000);
+}
+blink();
+
 //Tell the library which element to use for the table
 cards.init({
     table: '#card-table',
@@ -179,12 +190,18 @@ function scoreFinal(){
     p2_finals = upperhand.map(function(e) {return e.rank;}).filter(e => e != null);
     scores_res["player1"] += p1_finals.reduce((a, b) => a + b, 0);
     scores_res["player2"] += p2_finals.reduce((a, b) => a + b, 0);
-    htmlOutput = 'Player1: ' + scores_res['player1'] + '<br>Player2: ' + scores_res['player2'];
+    if(scores_res["player1"] > scores_res["player2"]){
+        winner = "player 1";
+    }else{
+        winner = "player 2";
+    }
+    htmlOutput = 'Player1: ' + scores_res['player1'] + '<br>Player2: ' + scores_res['player2'] + '<br>Winner is: '+winner;
     $('#score').fadeOut(1000, function()
     {     
         $(this).html(htmlOutput).fadeIn(1000);
     });
     ongoing = false;
+    blink();
 }
 
 function checkFinalRound(){
