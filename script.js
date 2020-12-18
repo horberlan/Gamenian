@@ -75,8 +75,9 @@ deck.click(function(card) {
 
 // lowerhand == player1
 lowerhandTurn = true;
+ongoing = true;
 lowerhand.click(function(card) {
-    if (!lowerhandTurn)
+    if (!lowerhandTurn || !ongoing)
         return
     if (true || card.suit == discardPile.topCard().suit ||
         card.rank == discardPile.topCard().rank) {
@@ -94,7 +95,7 @@ lowerhand.click(function(card) {
 
 // upperhand == player2
 upperhand.click(function(card) {
-    if (lowerhandTurn)
+    if (lowerhandTurn || !ongoing)
         return
     if (true || card.suit == discardPile.topCard().suit ||
         card.rank == discardPile.topCard().rank) {
@@ -155,10 +156,10 @@ function score_refresh() {
         if (e.rank > 1 && e.rank < 11) return e.rank;
     }).filter(e => e != null);
     if (Math.max(...p1_nums) > Math.max(...p2_nums)) {
-        scores_res["player1"] += Math.max(...p1_nums) | 0;
+        scores_res["player1"] += p1_nums.reduce((a, b) => a + b, 0);
         scores_res["lastNumWin"] = "lowerhand";
     } else {
-        scores_res["player2"] += Math.max(...p2_nums) | 0;
+        scores_res["player2"] += p2_nums.reduce((a, b) => a + b, 0);
         scores_res["lastNumWin"] = "upperhand";
     }
     player1 = [];
@@ -176,13 +177,14 @@ function score_refresh() {
 function scoreFinal(){
     p1_finals = lowerhand.map(function(e) {return e.rank;}).filter(e => e != null);
     p2_finals = upperhand.map(function(e) {return e.rank;}).filter(e => e != null);
-    scores_res["player1"] += Math.max(...p1_finals) | 0;
-    scores_res["player2"] += Math.max(...p2_finals) | 0;
+    scores_res["player1"] += p1_finals.reduce((a, b) => a + b, 0);
+    scores_res["player2"] += p2_finals.reduce((a, b) => a + b, 0);
     htmlOutput = 'Player1: ' + scores_res['player1'] + '<br>Player2: ' + scores_res['player2'];
     $('#score').fadeOut(1000, function()
     {     
         $(this).html(htmlOutput).fadeIn(1000);
     });
+    ongoing = false;
 }
 
 function checkFinalRound(){
