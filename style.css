@@ -23,11 +23,29 @@ a img {
 	right: 0; 
 	border: 0;			
 }
-button {
+button#deal{
 	height:30px;
 	width:100px;
 	margin:8px auto;
 }
+
+button#player1 {
+	height:30px;
+	width:100px;
+	position: absolute;
+	bottom: 0px;
+	left: 250px;
+}
+
+button#player2 {
+	height:30px;
+	width:100px;
+	position: absolute;
+	top: 0px;
+	left: 250px;
+}
+
+
 img.preload {
 	display:none;
 }

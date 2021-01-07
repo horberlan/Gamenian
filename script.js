@@ -87,6 +87,7 @@ deck.click(function(card) {
 // lowerhand == player1
 lowerhandTurn = true;
 ongoing = true;
+first = true;
 lowerhand.click(function(card) {
     if (!lowerhandTurn || !ongoing)
         return
@@ -97,10 +98,8 @@ lowerhand.click(function(card) {
         lowerhand.render();
     }
     player1.push(card);
-    if (player1.length > 0 && player2.length > 0) {
-        console.log(player1);
-        console.log(player2);
-    }
+    analyseIfSecond();
+    first = !first
     lowerhandTurn = false;
 });
 
@@ -116,6 +115,14 @@ upperhand.click(function(card) {
     }
 
     player2.push(card);
+    analyseIfSecond();
+    first = !first
+    lowerhandTurn = true;
+});
+
+function analyseIfSecond(){
+    if(first)
+        return;
     if (player1.length > 0 && player2.length > 0) {
         console.log(player1);
         console.log(player2);
@@ -140,9 +147,7 @@ upperhand.click(function(card) {
         checkFinalRound()
         console.log("scores" + scores_res);
     }
-    lowerhandTurn = true;
-});
-
+}
 
 //So, that should give you some idea about how to render a card game.
 //Now you just need to write some logic around who can play when etc...
@@ -156,9 +161,15 @@ function score_refresh() {
         if (e.rank == 1 || e.rank > 10) return e.rank;
     }).filter(e => e != null);
     if (Math.max(...p1_faces) > Math.max(...p2_faces))
+    {
         scores_res["lastFaceWin"] = "lowerhand";
+        lowerhandTurn = true;
+    }
     else
+    {
         scores_res["lastFaceWin"] = "upperhand";
+        lowerhandTurn = false;
+    }
 
     p1_nums = player1.map(function(e) {
         if (e.rank > 1 && e.rank < 11) return e.rank;

@@ -2,6 +2,10 @@
 
 *Gamenian* Card Game is a novel card game out of my imagination. I believe most viable and loved card games have these properties:
 
+Before diving in, you can join me on Slack for discussion and further explanations 
+
+[<img src="https://img.shields.io/badge/slack-join%20us-blueviolet">](bacloud.slack.com)  
+
 *Gamenian* is an old English word meaning: to entertain or enjoy oneself; to display happiness or joy.
 
 - Easy to learn rules and an intuitive goal
