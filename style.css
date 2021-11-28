@@ -1,20 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@700&display=swap');
+
+
+  
+  
+  
+  ::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 10px;
+	height: 8px;
+	background-color:hsl(157, 67%, 11%); 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	  background: #000;
+  }
+
 html { 
-	background-color:#092E20; 
+	background: #092E20 url('./svg/bg.svg') no-repeat no-repeat;
+	background-size:contain;
+	background-position:bottom;
 }
 
 body { 
 	position:relative;
 	border-radius:8px; 
-	box-shadow:black 0px 0px 2px; 
+	box-shadow: 0 4px 8px 0 black; 
 	width: 600px; 
 	background:#FFF; 
 	margin:20px auto; 
 	border:solid 1px black; 
+	opacity: .9;
 	font-family: arial, sans-serif; 
 	padding:50px;  
 }
 #buttons {
 	text-align:center;
+}
+h1{
+	font-family: 'Raleway',sans-serif;
+	background: linear-gradient(
+		to right, 
+		hsl(98, 50%, 48%), 
+		hsl(157, 67%, 11%)
+	  );
+	  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+p{
+	text-align: center;
 }
 
 a img {
